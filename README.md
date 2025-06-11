@@ -6,6 +6,11 @@
 - published on [jsr][link-2] ; 
 
 
+# list of available methods
+
+- get_commit_info
+
+
 # usage
 
 1. create the file `test-via-jsr.ts` with these contents :  
@@ -13,10 +18,19 @@
 ```
 import { dallmo_util_github } from "jsr:@dallmo/util-github";
 
-const config_file = "config.yaml";
-const config_obj = await dallmo_util_yaml( config_file );
-  console.log( config_obj );
+  // define related info of the repo you want to access here
+  const access_info:Access_Info = {
+    owner: owner,
+    repo: repo,
+    branch: branch,
+    token: token,
+  }; // access_info
+
+const commit_info:Commit_Info = await dallmo_util_github.get_commit_info( access_info );
+      console.log( "commit_info : ", commit_info );
 ```
+
+in which, it assumes 2 [interfaces, namely Access_Info and Commit_Info][link-3].
 
 
 
@@ -59,10 +73,8 @@ updates have therefore been made to add the "jsr:" prefix to both the sample cod
 
 
 [comments]: --------------------------------------------------
-[link-1]: https://deno.land/x/dallmo_util_yaml
-[link-2]: https://jsr.io/@dallmo/util-yaml
-[link-3]: https://github.com/dallmo/deno-dallmo-util-yaml/blob/main/test/config.yaml
-
+[link-2]: https://jsr.io/@dallmo/util-github
+[link-3]: https://github.com/dallmo/deno-dallmo-util-github/blob/main/etc/interfaces.ts
 
 # updates
 ## 2025-06-11

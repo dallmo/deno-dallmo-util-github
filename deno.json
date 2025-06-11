@@ -1,7 +1,7 @@
 {
   "name": "@dallmo/util-github",
   "description": "deno module, functions making use of the github API",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "tasks": {
     "dev": "deno run --watch app.ts",
     "test": "cd ./test; deno test --allow-read",

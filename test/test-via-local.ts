@@ -16,11 +16,12 @@ import type {
 // import from the local mod.ts
 import * as dallmo_util_github from "../mod.ts"
 
-  const PW66_COMMIT_INFO_AUTH = Deno.env.get("PW66_COMMIT_INFO_AUTH");  
   const owner: string = "dallmo";
   const repo: string = "pw66.pw";
   const branch: string = "main"; // or "master"
-  const token: unknown = PW66_COMMIT_INFO_AUTH; // Store your token securely
+
+  // auth code defined in env var
+  const token: any = Deno.env.get("PW66_COMMIT_INFO_AUTH");  
 
   const access_info:Access_Info = {
     owner: owner,

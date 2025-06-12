@@ -3,9 +3,9 @@
 interface Commit_Info{
 
   hash: string,
-  hash_raw: string,
+  hash_raw?: string,
   timestamp: string,
-  timestamp_raw: string,
+  timestamp_raw?: string,
 
 }; // Commit_Info
 /////////////////////////////////

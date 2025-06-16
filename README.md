@@ -13,10 +13,13 @@
 
 # usage
 
-1. create the file `test-via-jsr.ts` with these contents :  
+1. create a file `test-via-jsr.ts` with these contents :  
 
 ```
 import { dallmo_util_github } from "jsr:@dallmo/util-github";
+
+  type Commit_Info = dallmo_util_github.types.Commit_Info;
+  type Access_Info = dallmo_util_github.types.Access_Info;
 
   // define related info of the repo you want to access here
   const access_info:Access_Info = {
@@ -30,8 +33,7 @@ const commit_info:Commit_Info = await dallmo_util_github.get_commit_info( access
       console.log( "commit_info : ", commit_info );
 ```
 
-in which, it assumes 2 [interfaces, namely Access_Info and Commit_Info][link-3].
-
+about the intefaces [Commit_Info and Access_Info.][link-3]
 
 
 2. run the test file
@@ -77,5 +79,9 @@ updates have therefore been made to add the "jsr:" prefix to both the sample cod
 [link-3]: https://github.com/dallmo/deno-dallmo-util-github/blob/main/etc/interfaces.ts
 
 # updates
+## 2025-06-16
+- include interface types exports in `mod.ts` ;
+- update test codes in README, `test-via-jsr.ts`, and `test-via-local.ts` ;
+
 ## 2025-06-11
-- initial publish
+- initial publish ; 
